@@ -1,5 +1,7 @@
+import "./styles/app.css";
+
 const App = () => {
-  return <h1>Hello world</h1>;
+  return <div className="app"></div>;
 };
 
 export default App;
