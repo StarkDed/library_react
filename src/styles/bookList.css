@@ -2,4 +2,5 @@
 .book-list-wrapper{
     width:100%;
     padding:8px;
+    flex:1;
 }
