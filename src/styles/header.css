@@ -18,7 +18,15 @@ h1{
 .search-container{
     max-width: 750px;
     width:100%;
-    position:relative
+    position:relative;
+    display:flex;
+    align-items:center;
+    gap:10px;
+}
+
+.sorting-icon:hover{
+    cursor:pointer;
+    opacity:0.8
 }
 
 input{
@@ -61,7 +69,7 @@ button:active{
 
 .btn-search{
     position:absolute;
-    right:-7px;
+    right:23px;
     height:35px;
     margin:none
 }

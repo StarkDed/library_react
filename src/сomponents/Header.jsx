@@ -1,4 +1,5 @@
 import "../styles/header.css";
+import SortingSvg from "../assets/svg/SortingSvg.jsx";
 
 const Header = () => {
   return (
@@ -9,6 +10,7 @@ const Header = () => {
         <div className="search-container">
           <input placeholder="Поиск" type="search" />
           <button className="btn-search">Найти</button>
+          <SortingSvg className="sorting-icon" />
         </div>
         <button className="btn-login">Войти</button>
       </div>
