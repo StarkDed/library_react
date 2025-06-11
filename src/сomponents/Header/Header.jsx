@@ -1,18 +1,18 @@
-import "./header.css";
-import SortingSvg from "../../assets/svg/SortingSvg.jsx";
+import styles from "./header.module.css";
+import SortingSvg from "../../assets/svg/SortingSvg/SortingSvg.jsx";
 
 const Header = () => {
   return (
     <header>
-      <div className="header-content">
+      <div className={styles["header-content"]}>
         <h1>Library</h1>
-        <button className="btn-catalog">Каталог</button>
-        <div className="search-container">
+        <button className={styles["btn-catalog"]}>Каталог</button>
+        <div className={styles["search-container"]}>
           <input placeholder="Поиск" type="search" />
-          <button className="btn-search">Найти</button>
-          <SortingSvg className="sorting-icon" />
+          <button className={styles["btn-search"]}>Найти</button>
+          <SortingSvg className={styles["sorting-icon"]} />
         </div>
-        <button className="btn-login">Войти</button>
+        <button className={styles["btn-login"]}>Войти</button>
       </div>
     </header>
   );

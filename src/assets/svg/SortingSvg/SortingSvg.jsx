@@ -1,14 +1,16 @@
-const SortingSvg = ({ className }) => {
+import styles from "./sortingSvg.module.css";
+
+const SortingSvg = () => {
   return (
     <svg
-      className={className}
+      className={styles["sorting-icon"]}
       width="25"
       height="25"
       viewBox="0 0 25 25"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
     >
-      <g clip-path="url(#clip0_12_19)">
+      <g clipPath="url(#clip0_12_19)">
         <path
           d="M3.87137 24.6C3.63457 24.6 3.40747 24.506 3.24003 24.3385C3.07258 24.1711 2.97852 23.944 2.97852 23.7072V1.29288C2.97852 1.05608 3.07258 0.828979 3.24003 0.661536C3.40747 0.494093 3.63457 0.400024 3.87137 0.400024C4.10817 0.400024 4.33527 0.494093 4.50272 0.661536C4.67016 0.828979 4.76423 1.05608 4.76423 1.29288V23.7072C4.76423 23.944 4.67016 24.1711 4.50272 24.3385C4.33527 24.506 4.10817 24.6 3.87137 24.6Z"
           fill="black"
