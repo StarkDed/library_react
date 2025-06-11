@@ -1,12 +1,15 @@
 import styles from "./book.module.css";
 
+import Heart from "../../assets/svg/Heart/Heart.jsx";
+
 const Book = ({ book }) => {
   return (
     <div className={styles["book-container"]}>
       <div className={styles["image-container"]}>
         <img src={book.cover} alt="" />
+        <Heart />
       </div>
-      <span className={styles["bookName"]}>{book.name}</span>
+      <span className={styles.bookName}>{book.name}</span>
       <br />
       <span className={styles["authorName"]}>{book.author}</span>
       <br />
