@@ -1,4 +1,4 @@
-import "../styles/BookList.css";
+import "./BookList.css";
 import { useState } from "react";
 
 const BookList = ({ listBooks }) => {

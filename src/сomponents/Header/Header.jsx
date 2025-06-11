@@ -1,5 +1,5 @@
-import "../styles/header.css";
-import SortingSvg from "../assets/svg/SortingSvg.jsx";
+import "./header.css";
+import SortingSvg from "../../assets/svg/SortingSvg.jsx";
 
 const Header = () => {
   return (

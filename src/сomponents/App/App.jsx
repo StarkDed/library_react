@@ -1,9 +1,9 @@
 import { useState } from "react";
 
-import "./styles/app.css";
-import Header from "./сomponents/Header.jsx";
-import BookList from "./сomponents/BookList.jsx";
-import Footer from "./сomponents/Footer.jsx";
+import "./app.css";
+import Header from "../Header/Header.jsx";
+import BookList from "../BookList/BookList.jsx";
+import Footer from "../Footer/Footer.jsx";
 
 const App = () => {
   const [listBooks, setListBooks] = useState([]);
