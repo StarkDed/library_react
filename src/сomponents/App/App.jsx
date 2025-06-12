@@ -78,11 +78,11 @@ const App = () => {
     },
   ]);
 
-  const [isCatalog, setIsCatalog] = useState(true);
+  const [isCatalog, setIsCatalog] = useState(false);
 
   return (
     <div className="app">
-      <Header />
+      <Header toggleCatalogVisibility={() => setIsCatalog((prev) => !prev)} />
       {isCatalog ? (
         <Catalog />
       ) : (
