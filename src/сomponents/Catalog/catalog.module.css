@@ -1,5 +1,28 @@
 
 
 .catalog{
-    flex:1
+    flex:1;
+    padding:16px;
+    position:relative;
+}
+
+.title{
+    text-align: center;
+    font-size:2em
+}
+
+.genres{
+    display:block
+}
+
+.genreTitle{
+    list-style-type: none;
+    cursor:pointer;
+    margin-bottom:5px;
+    width:max-content
+}
+
+.genreTitle:hover{
+    text-decoration:underline;
+    
 }

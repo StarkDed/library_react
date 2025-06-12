@@ -1,4 +1,5 @@
-import { useState } from "react";
+import { useState, useCallback } from "react";
+import React from "react";
 
 import "./app.css";
 
@@ -80,11 +81,17 @@ const App = () => {
 
   const [isCatalog, setIsCatalog] = useState(false);
 
+  const toggleCatalogVisibility = useCallback(() => {
+    setIsCatalog((prev) => !prev);
+  });
+
+  const CatalogMemo = React.memo(Catalog);
+
   return (
     <div className="app">
-      <Header toggleCatalogVisibility={() => setIsCatalog((prev) => !prev)} />
+      <Header toggleCatalogVisibility={toggleCatalogVisibility} />
       {isCatalog ? (
-        <Catalog />
+        <CatalogMemo toggleCatalogVisibility={toggleCatalogVisibility} />
       ) : (
         <>
           <BookList listBooks={listBooks} />
