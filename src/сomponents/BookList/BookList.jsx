@@ -4,9 +4,7 @@ import styles from "./BookList.module.css";
 
 import Book from "../Book/Book.jsx";
 
-const BookList = ({ listBooks }) => {
-  const [headline, setHeadline] = useState("Лучшие книги");
-
+const BookList = ({ listBooks, headline }) => {
   return (
     <div className={styles["book-list-wrapper"]}>
       <h2>{headline}</h2>

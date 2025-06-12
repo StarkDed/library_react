@@ -2,7 +2,7 @@ import styles from "./catalog.module.css";
 
 import Cross from "../../assets/svg/Cross1/Cross.jsx";
 
-const Catalog = ({ toggleCatalogVisibility }) => {
+const Catalog = ({ toggleCatalogVisibility, setHeadline }) => {
   const catalogList = [
     { id: 1, name: "Детективы" },
     { id: 2, name: "Исторический детективы" },
@@ -24,7 +24,11 @@ const Catalog = ({ toggleCatalogVisibility }) => {
       <Cross onClick={() => toggleCatalogVisibility()} />
       <ul className={styles.genres}>
         {catalogList.map((el) => (
-          <li className={styles.genreTitle} key={el.id}>
+          <li
+            className={styles.genreTitle}
+            key={el.id}
+            onClick={() => setHeadline(el.name)}
+          >
             {el.name}
           </li>
         ))}

@@ -1,4 +1,4 @@
-import { useState, useCallback } from "react";
+import { useState, useCallback, useEffect } from "react";
 import React from "react";
 
 import "./app.css";
@@ -9,7 +9,7 @@ import Footer from "../Footer/Footer.jsx";
 import Catalog from "../Catalog/Catalog.jsx";
 
 const App = () => {
-  const [listBooks, setListBooks] = useState([
+  const originalListBooks = [
     {
       id: 1,
       name: "Кто вынес приговор",
@@ -22,7 +22,7 @@ const App = () => {
       name: "Дочь таксидермиста",
       author: "Кейт Мосс",
       cover: "/bookCovers/Daughterofataxidermist.jpg",
-      genres: ["Детективы", "Исторический детектив", "Триллер"],
+      genres: ["Детективы", "Исторический детективы", "Триллер"],
     },
     {
       id: 3,
@@ -77,7 +77,19 @@ const App = () => {
       cover: "/bookCovers/TheFamilyOfFreaks.jpg",
       genres: ["Драма"],
     },
-  ]);
+  ];
+
+  const [listBooks, setListBooks] = useState([]);
+
+  const [headline, setHeadline] = useState("Лучшие книги");
+
+  useEffect(() => {
+    setListBooks(originalListBooks);
+    if (headline !== "Лучшие книги") {
+      setListBooks((prev) => prev.filter((el) => el.genres.includes(headline)));
+      setIsCatalog(false);
+    }
+  }, [headline]);
 
   const [isCatalog, setIsCatalog] = useState(false);
 
@@ -89,12 +101,18 @@ const App = () => {
 
   return (
     <div className="app">
-      <Header toggleCatalogVisibility={toggleCatalogVisibility} />
+      <Header
+        toggleCatalogVisibility={toggleCatalogVisibility}
+        setHeadline={setHeadline}
+      />
       {isCatalog ? (
-        <CatalogMemo toggleCatalogVisibility={toggleCatalogVisibility} />
+        <CatalogMemo
+          toggleCatalogVisibility={toggleCatalogVisibility}
+          setHeadline={setHeadline}
+        />
       ) : (
         <>
-          <BookList listBooks={listBooks} />
+          <BookList listBooks={listBooks} headline={headline} />
           <Footer></Footer>
         </>
       )}
