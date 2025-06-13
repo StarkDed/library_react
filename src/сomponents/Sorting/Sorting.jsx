@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 
 import styles from "./sorting.module.css";
 
@@ -11,9 +11,29 @@ const Sorting = ({ setSortingName }) => {
   ]);
 
   const [isSortingOpen, setIsSortingOpen] = useState(false);
+  const wrapperRef = useRef(null);
+
+  // click handler outside the component
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (
+        isSortingOpen &&
+        wrapperRef.current &&
+        !wrapperRef.current.contains(event.target)
+      ) {
+        setIsSortingOpen(false);
+      }
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [isSortingOpen]);
 
   return (
-    <div className={styles["sorting-wrapper"]}>
+    <div className={styles["sorting-wrapper"]} ref={wrapperRef}>
       <SortingSvg onClick={() => setIsSortingOpen((prev) => !prev)} />
       <div
         className={styles["sorting-container"]}
