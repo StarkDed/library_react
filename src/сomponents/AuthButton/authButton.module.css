@@ -1,4 +1,4 @@
-button{
+.btn-login{
     cursor:pointer;
     outline:none;
     border:none;
@@ -8,12 +8,13 @@ button{
     font-size:1em;
     border-radius:10px;
     margin:0 7px;
+    text-decoration:none;
 }
 
-button:hover{
+.btn-login:hover{
     background-color:var(--second-color)
 }
 
-button:active{
+.btn-login:active{
     background-color:#1a2077
 }
