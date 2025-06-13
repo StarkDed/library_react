@@ -1,0 +1,19 @@
+
+.sorting-wrapper{
+    position:relative
+}
+
+.sorting-container{
+    position:absolute;
+    top:100%;
+    right:-50%;
+    z-index:999;
+    border:2px solid black;
+    background-color:bisque;
+    width:100px;
+}
+
+.title{
+    font-size:1em;
+    text-align:center
+}
