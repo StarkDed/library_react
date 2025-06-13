@@ -4,8 +4,8 @@ import styles from "./sorting.module.css";
 
 import SortingSvg from "../../assets/svg/SortingSvg/SortingSvg.jsx";
 
-const Sorting = () => {
-  const [listSortingName, setSortingName] = useState([
+const Sorting = ({ setSortingName }) => {
+  const [listSortingName, setListSortingName] = useState([
     { id: 1, name: "По названию" },
     { id: 2, name: "По автору" },
   ]);
@@ -28,6 +28,7 @@ const Sorting = () => {
                 id={"sorting" + el.id}
                 className={styles["input-radio"]}
                 type="radio"
+                onClick={() => setSortingName(el.name)}
               />
               <label
                 htmlFor={"sorting" + el.id}

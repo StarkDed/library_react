@@ -1,9 +1,12 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 import "./app.css";
+
 import Header from "../Header/Header.jsx";
 import BookList from "../BookList/BookList.jsx";
 import Footer from "../Footer/Footer.jsx";
+
+import { sortingBooks } from "./App.js";
 
 const App = () => {
   const [listBooks, setListBooks] = useState([
@@ -76,9 +79,17 @@ const App = () => {
     },
   ]);
 
+  const [sortingName, setSortingName] = useState("");
+
+  useEffect(() => {
+    if (sortingName) {
+      setListBooks(sortingBooks(listBooks, sortingName));
+    }
+  }, [sortingName]);
+
   return (
     <div className="app">
-      <Header />
+      <Header setSortingName={setSortingName} />
       <BookList listBooks={listBooks} />
       <Footer></Footer>
     </div>
