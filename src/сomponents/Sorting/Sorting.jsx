@@ -22,9 +22,19 @@ const Sorting = () => {
         <h4 className={styles.title}>Сортировка</h4>
         <div className={styles["sorting-list"]}>
           {listSortingName.map((el) => (
-            <div key={el.id}>
-              <input type="radio" />
-              <span>{el.name}</span>
+            <div className={styles.radioLabelContainer} key={el.id}>
+              <input
+                name="sorting"
+                id={"sorting" + el.id}
+                className={styles["input-radio"]}
+                type="radio"
+              />
+              <label
+                htmlFor={"sorting" + el.id}
+                style={{ fontSize: "1em", cursor: "pointer" }}
+              >
+                {el.name}
+              </label>
             </div>
           ))}
         </div>
