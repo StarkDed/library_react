@@ -10,6 +10,7 @@ import Auth from "../Auth/Auth.jsx";
 
 const App = () => {
   const [listBooks, setListBooks] = useState([]);
+  const [users, setUsers] = useState([]);
 
   return (
     <BrowserRouter>
@@ -18,7 +19,10 @@ const App = () => {
         <main>
           <Routes>
             <Route path="/" element={<BookList listBooks={listBooks} />} />
-            <Route path="/login" element={<Auth />} />
+            <Route
+              path="/login"
+              element={<Auth users={users} setUsers={setUsers} />}
+            />
           </Routes>
         </main>
         <Footer></Footer>
