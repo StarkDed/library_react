@@ -12,6 +12,11 @@
     text-align:center;
 }
 
+.error-output{
+    margin:5px 0;
+    align-self:center
+}
+
 .btn-login{
     align-self:center;
     margin: 7px 0

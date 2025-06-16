@@ -8,11 +8,12 @@ import { registration, login } from "./Auth.js";
 const Auth = ({ users, setUsers, setIsAuthrized }) => {
   const navigate = useNavigate();
 
+  const [error, setError] = useState("");
   const [isRegistration, setIsRegistration] = useState(false);
   const [formData, setFormData] = useState({
     login: "",
     password: "",
-    repeatePassword: "",
+    repeaterPassword: "",
   });
 
   const handleChangeFormData = (e) => {
@@ -20,11 +21,30 @@ const Auth = ({ users, setUsers, setIsAuthrized }) => {
     setFormData((prev) => ({ ...prev, [id]: value }));
   };
 
+  const handleAuth = () => {
+    const message = isRegistration
+      ? registration(users, setUsers, formData)
+      : login(users, formData);
+
+    if (message.status === "success") {
+      navigate("/");
+      setIsAuthrized(true);
+    } else if (message.status === "error") {
+      setError(message.error);
+    }
+  };
+
   return (
     <div className={styles["auth-container"]}>
       <h2 className={styles.title}>
         {isRegistration ? "Регистрация" : "Войти"}
       </h2>
+      <p
+        className={styles["error-output"]}
+        style={{ color: "red", display: error ? "block" : "none" }}
+      >
+        {error}
+      </p>
       <div className={styles.container}>
         <label htmlFor="login">Логин</label>
         <input
@@ -55,18 +75,7 @@ const Auth = ({ users, setUsers, setIsAuthrized }) => {
           onChange={handleChangeFormData}
         />
       </div>
-      <button
-        className={styles["btn-login"]}
-        onClick={() => {
-          if (isRegistration) {
-            registration(setUsers, formData);
-          } else {
-            login(users, formData);
-            navigate("/");
-          }
-          setIsAuthrized(true);
-        }}
-      >
+      <button className={styles["btn-login"]} onClick={handleAuth}>
         {isRegistration ? "Зарегистрироваться" : "Войти"}
       </button>
       <span
