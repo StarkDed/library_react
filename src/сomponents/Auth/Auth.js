@@ -8,6 +8,7 @@ function registration(users, setUsers, formData) {
           id: prev.length + 1,
           login: formData.login,
           password: formData.password,
+          role: "user",
         },
       ];
     });
@@ -20,10 +21,26 @@ function registration(users, setUsers, formData) {
 
 function login(users, formData) {
   try {
-    return { status: "success" };
+    const user = validationLogin(users, formData);
+    return { status: "success", user: user };
   } catch (e) {
     return { status: "error", error: e.message };
   }
+}
+
+function validationLogin(users, formData) {
+  findUser(users, formData.login, formData.password);
+}
+
+function findUser(users, login, password) {
+  const user = users.find(
+    (user) => user.login === login && user.password === password
+  );
+  if (user === undefined) {
+    throw new Error("Пользователь не найден");
+  }
+
+  return user;
 }
 
 function validationReg(users, formData) {
