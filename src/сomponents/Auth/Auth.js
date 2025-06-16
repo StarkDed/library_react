@@ -11,6 +11,8 @@ function registration(setUsers, formData) {
   });
 }
 
-function login(users, formData) {}
+function login(users, formData) {
+  return formData;
+}
 
 export { registration, login };

@@ -1,0 +1,12 @@
+.account-container{
+    flex-shrink:0;
+}
+
+.account{
+    cursor:pointer;
+    margin:0 4px;
+}
+
+.path{
+    fill:var(--main-color)
+}

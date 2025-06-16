@@ -1,10 +1,13 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 import styles from "./auth.module.css";
 
 import { registration, login } from "./Auth.js";
 
-const Auth = ({ users, setUsers }) => {
+const Auth = ({ users, setUsers, setIsAuthrized }) => {
+  const navigate = useNavigate();
+
   const [isRegistration, setIsRegistration] = useState(false);
   const [formData, setFormData] = useState({
     login: "",
@@ -59,7 +62,9 @@ const Auth = ({ users, setUsers }) => {
             registration(setUsers, formData);
           } else {
             login(users, formData);
+            navigate("/");
           }
+          setIsAuthrized(true);
         }}
       >
         {isRegistration ? "Зарегистрироваться" : "Войти"}

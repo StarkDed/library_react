@@ -49,4 +49,8 @@ button:active{
         top:5px;
         right:90px;
     }
+
+    .btn-catalog.near-catalog{
+        right:31px;
+    }
 }

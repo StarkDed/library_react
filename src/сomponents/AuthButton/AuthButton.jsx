@@ -2,11 +2,19 @@ import { Link } from "react-router-dom";
 
 import styles from "./authButton.module.css";
 
-const AuthButton = () => {
+import Account from "../../assets/svg/Account/Account.jsx";
+
+const AuthButton = ({ isAuthorized }) => {
   return (
-    <Link to="/login" className={styles["btn-login"]}>
-      Войти
-    </Link>
+    <>
+      {isAuthorized ? (
+        <Account />
+      ) : (
+        <Link to="/login" className={styles["btn-login"]}>
+          Войти
+        </Link>
+      )}
+    </>
   );
 };
 
