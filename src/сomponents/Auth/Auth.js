@@ -19,29 +19,47 @@ function registration(users, setUsers, formData) {
 }
 
 function login(users, formData) {
-  return formData;
+  try {
+    return { status: "success" };
+  } catch (e) {
+    return { status: "error", error: e.message };
+  }
 }
 
 function validationReg(users, formData) {
-  checkLogin(users, formData.login);
-  checkPassword(formData.password, formData.repeaterPassword);
+  checkLoginReg(users, formData.login);
+  checkPasswordReg(formData.password, formData.repeaterPassword);
 }
 
-function checkLogin(users, login) {
+function checkLoginReg(users, login) {
+  checkLoginOnEmpty(login);
+  checkLoginOnDublicat(users, login);
+}
+
+function checkLoginOnEmpty(login) {
   if (login === "") {
     throw new Error("Введите логин");
   }
+}
 
+function checkLoginOnDublicat(users, login) {
   if (users.some((user) => user.login === login)) {
     throw new Error("Логин уже существует");
   }
 }
 
-function checkPassword(password, repeaterPassword) {
+function checkPasswordReg(password, repeaterPassword) {
+  checkPasswordValidation(password);
+  comparePasswordAndRepeaterPassword(password, repeaterPassword);
+}
+
+function checkPasswordValidation(password) {
   if (!(password.trim().length > 7)) {
     throw new Error("Некорректный пароль");
   }
+}
 
+function comparePasswordAndRepeaterPassword(password, repeaterPassword) {
   if (password !== repeaterPassword) {
     throw new Error("Повтор пароля не совпадает");
   }
