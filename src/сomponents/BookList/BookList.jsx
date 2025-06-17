@@ -1,5 +1,3 @@
-import { useState } from "react";
-
 import styles from "./BookList.module.css";
 
 import Book from "../Book/Book.jsx";
