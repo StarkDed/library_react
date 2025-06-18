@@ -3,3 +3,7 @@
     width:100%;
     padding:8px;
 }
+
+.title{
+    user-select: none;
+}

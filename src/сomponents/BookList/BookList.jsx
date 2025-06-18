@@ -6,7 +6,7 @@ const BookList = ({ listBooks }) => {
 
   return (
     <div className={styles["book-list-wrapper"]}>
-      <h2>{headline}</h2>
+      <h2 className={styles["title"]}>{headline}</h2>
       <div className={styles["book-list"]}></div>
     </div>
   );

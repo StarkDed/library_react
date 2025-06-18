@@ -11,11 +11,15 @@ const Header = ({ isAuthorized }) => {
   return (
     <header>
       <div className={styles["header-content"]}>
-        <h1 onClick={() => navigate("/")} style={{ cursor: "pointer" }}>
+        <h1
+          className={styles["title"]}
+          onClick={() => navigate("/")}
+          style={{ cursor: "pointer" }}
+        >
           Library
         </h1>
         <button
-          className={`${styles["btn-catalog"]} ${
+          className={`${styles["btn"]} ${styles["btn-catalog"]} ${
             isAuthorized ? styles["near-catalog"] : ""
           }`}
         >
