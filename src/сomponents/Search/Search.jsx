@@ -5,7 +5,9 @@ const Search = () => {
   return (
     <div className={styles["search-container"]}>
       <input placeholder="Поиск" type="search" />
-      <button className={styles["btn-search"]}>Найти</button>
+      <button className={`${styles["btn"]} ${styles["btn-search"]}`}>
+        Найти
+      </button>
       <SortingSvg className={styles["sorting-icon"]} />
     </div>
   );

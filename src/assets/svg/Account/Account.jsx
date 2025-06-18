@@ -1,8 +1,8 @@
 import styles from "./account.module.css";
 
-const Account = () => {
+const Account = ({ onClick }) => {
   return (
-    <div className={styles["account-container"]}>
+    <div className={styles["account-container"]} onClick={onClick}>
       <svg
         width="30"
         height="30"

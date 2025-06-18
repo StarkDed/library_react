@@ -1,19 +1,28 @@
+import * as ReactDom from "react-dom";
+import { useState } from "react";
 import { Link } from "react-router-dom";
 
 import styles from "./authButton.module.css";
 
 import Account from "../../assets/svg/Account/Account.jsx";
+import MenuUser from "../MenuUser/MenuUser.jsx";
 
 const AuthButton = ({ isAuthorized }) => {
+  const [showMenu, setShowMenu] = useState(false);
   return (
     <>
       {isAuthorized ? (
-        <Account />
+        <Account onClick={() => setShowMenu((prev) => !prev)} />
       ) : (
         <Link to="/login" className={styles["btn-login"]}>
           Войти
         </Link>
       )}
+      {showMenu &&
+        ReactDom.createPortal(
+          <MenuUser showMenu={showMenu} setShowMenu={setShowMenu} />,
+          document.getElementById("app")
+        )}
     </>
   );
 };

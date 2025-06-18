@@ -26,7 +26,7 @@ input[type="search"]::-webkit-search-cancel-button{
     padding-right:8px;
 }
 
-button{
+.btn{
     cursor:pointer;
     outline:none;
     border:none;
@@ -37,17 +37,17 @@ button{
     border-radius:10px;
 }
 
-button:hover{
+.btn:hover{
     background-color:var(--second-color)
 }
 
-button:active{
+.btn:active{
     background-color:#1a2077
 }
 
 .btn-search{
     position:absolute;
-    right:23px;
+    right:30px;
     height:35px;
     margin:none
 }
