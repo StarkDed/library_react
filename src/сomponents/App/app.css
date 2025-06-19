@@ -3,6 +3,7 @@
   --second-color: #252fab;
   --third-color: #0d279d;
   --border-color: #051144;
+  --background-color: #ffffff;
 }
 
 * {
@@ -24,11 +25,6 @@ body {
 input,
 button {
   font-family: "ALS Sirius", sans-serif;
-}
-
-html,
-body {
-  width: 100%;
 }
 
 .app {

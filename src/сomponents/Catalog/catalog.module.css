@@ -1,0 +1,40 @@
+
+
+.catalog{
+    flex:1;
+    padding:16px;
+    position:fixed;
+    z-index:1000;
+    background-color:#ffffff;
+    left:0;
+    top:48px;
+    width:100%;
+    height:100%;
+}
+
+.title{
+    text-align: center;
+    font-size:2em
+}
+
+.genres{
+    display:block
+}
+
+.genreTitle{
+    list-style-type: none;
+    cursor:pointer;
+    margin-bottom:5px;
+    width:max-content
+}
+
+.genreTitle:hover{
+    text-decoration:underline;
+    
+}
+
+@media (max-width:576px){
+    .catalog{
+        top:89px;
+    }
+}
