@@ -11,11 +11,7 @@ const Header = ({ isAuthorized, setIsAuthrized, setUser }) => {
   return (
     <header>
       <div className={styles["header-content"]}>
-        <h1
-          className={styles["title"]}
-          onClick={() => navigate("/")}
-          style={{ cursor: "pointer" }}
-        >
+        <h1 className={styles["title"]} onClick={() => navigate("/")}>
           Library
         </h1>
         <button

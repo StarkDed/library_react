@@ -1,82 +1,82 @@
-
-.menu-user-wrapper{
-    position:fixed;
-    right:0;
-    height:100%;
-    background-color:var(--second-color);
-    width:200px;
-    display:flex;
-    flex-direction:column;
-    align-items:center;
-    border-left:5px solid var(--border-color)
+.menu-user-wrapper {
+  position: fixed;
+  right: 0;
+  height: 100%;
+  background-color: var(--second-color);
+  width: 200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-left: 5px solid var(--border-color);
 }
 
-.menu-user-container{
-    margin-top: 7px;
-    width:100%; 
+.menu-user-container {
+  margin-top: 7px;
+  width: 100%;
 }
 
-.title{
-    color:white;
-    text-align:center;
-    user-select:none;
+.title {
+  color: white;
+  text-align: center;
+  user-select: none;
 }
 
-.list-btns{
-    margin-top:30px;
-    display:flex;
-    flex-direction:column;
-    /* gap:9px; */
-    width:100%
+.list-btns {
+  margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+  /* gap:9px; */
+  width: 100%;
 }
 
-.btn{
-    outline:none;
-    border:none;
-    background-color:transparent;
-    color:white;
-    cursor:pointer;
-    font-size:1.2em;
-    width:100%;
-    padding:10px;
-    border-bottom:2px solid white;
+.btn {
+  outline: none;
+  border: none;
+  background-color: transparent;
+  color: white;
+  cursor: pointer;
+  font-size: 1.2em;
+  width: 100%;
+  padding: 10px;
+  border-bottom: 2px solid white;
 }
 
-.btn:hover{
-    background-color:var(--third-color)
+.btn:hover {
+  background-color: var(--third-color);
 }
 
-.btn-favorites,.btn-exit{
-    border-top:2px solid white;
+.btn-favorites,
+.btn-exit {
+  border-top: 2px solid white;
 }
 
-.btn-exit{
-    margin-top:auto;
-    border-bottom:none;
+.btn-exit {
+  margin-top: auto;
+  border-bottom: none;
 }
 
-@keyframes SlideIn{
-    from{
-        right:-200px;
-    }
-    to{
-        right:0
-    }
+@keyframes SlideIn {
+  from {
+    right: -200px;
+  }
+  to {
+    right: 0;
+  }
 }
 
-@keyframes SlideOut{
-    from{
-        right:0
-    }
-    to{
-        right:-200px
-    }
+@keyframes SlideOut {
+  from {
+    right: 0;
+  }
+  to {
+    right: -200px;
+  }
 }
 
-.menu-user-wrapper{
-    animation:SlideIn .5s forwards
+.menu-user-wrapper {
+  animation: SlideIn 0.5s forwards;
 }
 
-.menu-user-wrapper.fade-out{
-    animation:SlideOut .5s forwards
+.menu-user-wrapper.fade-out {
+  animation: SlideOut 0.5s forwards;
 }

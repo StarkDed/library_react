@@ -1,6 +1,6 @@
 import styles from "./account.module.css";
 
-const AccountSvg = ({ onClick }) => {
+const Account = ({ onClick }) => {
   return (
     <svg
       width="30"
@@ -9,7 +9,6 @@ const AccountSvg = ({ onClick }) => {
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
       className={styles.account}
-      style={{ flexShrink: 0 }}
       onClick={onClick}
     >
       <path
@@ -20,4 +19,4 @@ const AccountSvg = ({ onClick }) => {
   );
 };
 
-export default AccountSvg;
+export default Account;

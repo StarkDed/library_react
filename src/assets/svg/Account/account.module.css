@@ -1,6 +1,7 @@
 .account {
   cursor: pointer;
   margin: 0 4px;
+  flex-shrink: 0;
 }
 
 .path {

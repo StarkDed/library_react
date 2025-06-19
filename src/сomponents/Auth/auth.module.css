@@ -1,70 +1,70 @@
-
-.auth-container{
-    width:300px;
-    margin: 0 auto;
-    display:flex;
-    flex-direction:column;
-    margin-top:30px;
+.auth-container {
+  width: 300px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  margin-top: 30px;
 }
 
-.title{
-    font-size:1.6em;
-    text-align:center;
+.title {
+  font-size: 1.6em;
+  text-align: center;
 }
 
-.error-output{
-    margin:5px 0;
-    align-self:center
+.error-output {
+  margin: 5px 0;
+  align-self: center;
+  color: red;
 }
 
-.btn{
-    cursor:pointer;
-    outline:none;
-    border:none;
-    padding:9px 16px;
-    background-color:var(--main-color);
-    color:white;
-    font-size:1em;
-    border-radius:10px;
-    margin:0 7px;
+.btn {
+  cursor: pointer;
+  outline: none;
+  border: none;
+  padding: 9px 16px;
+  background-color: var(--main-color);
+  color: white;
+  font-size: 1em;
+  border-radius: 10px;
+  margin: 0 7px;
 }
 
-.btn:hover{
-    background-color:var(--second-color)
+.btn:hover {
+  background-color: var(--second-color);
 }
 
-.btn:active{
-    background-color:#1a2077
+.btn:active {
+  background-color: var(--third-color);
 }
 
-.btn-login{
-    align-self:center;
-    margin: 7px 0
+.btn-login {
+  align-self: center;
+  margin: 7px 0;
 }
 
-.container{
-    margin-bottom:10px;
+.container {
+  margin-bottom: 10px;
 }
 
-.container label{
-    font-size:1.1em
+.container label {
+  font-size: 1.1em;
 }
 
-.input-reg{
-    width:100%;
-    height:35px;
-    border-radius:8px;
-    padding:2px 78px 2px 10px;
-    font-size:1em;
-    border:1px solid var(--main-color)
+.input-reg {
+  width: 100%;
+  height: 35px;
+  border-radius: 8px;
+  padding: 2px 78px 2px 10px;
+  font-size: 1em;
+  border: 1px solid var(--main-color);
 }
 
-.toggle-button{
-    align-self:center;
-    cursor:pointer;
-    font-size:1.1em
+.toggle-button {
+  align-self: center;
+  cursor: pointer;
+  font-size: 1.1em;
 }
 
-.toggle-button:hover{
-    text-decoration:underline
+.toggle-button:hover {
+  text-decoration: underline;
 }

@@ -42,7 +42,7 @@ const Auth = ({ users, setUsers, setIsAuthrized, setUser }) => {
       </h2>
       <p
         className={styles["error-output"]}
-        style={{ color: "red", display: error ? "block" : "none" }}
+        style={{ display: error ? "block" : "none" }}
       >
         {error}
       </p>
