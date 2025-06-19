@@ -55,6 +55,28 @@
     border-bottom:none;
 }
 
+@keyframes SlideIn{
+    from{
+        right:-200px;
+    }
+    to{
+        right:0
+    }
+}
 
+@keyframes SlideOut{
+    from{
+        right:0
+    }
+    to{
+        right:-200px
+    }
+}
 
-    
+.menu-user-wrapper{
+    animation:SlideIn .5s forwards
+}
+
+.menu-user-wrapper.fade-out{
+    animation:SlideOut .5s forwards
+}
