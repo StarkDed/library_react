@@ -18,6 +18,17 @@ html {
 html,
 body {
   width: 100%;
+  font-family: "ALS Sirius", sans-serif;
+}
+
+input,
+button {
+  font-family: "ALS Sirius", sans-serif;
+}
+
+html,
+body {
+  width: 100%;
 }
 
 .app {
