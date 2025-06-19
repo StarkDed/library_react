@@ -8,21 +8,21 @@ const MenuUser = ({ showMenu, setShowMenu, setIsAuthrized, setUser }) => {
   const wrapperRef = useRef(null);
   const [fadeOut, setFadeOut] = useState(false);
 
-  useEffect(() => {
-    const handleClickOutside = (event) => {
-      if (
-        showMenu &&
-        wrapperRef.current &&
-        !wrapperRef.current.contains(event.target)
-      ) {
-        setFadeOut(true);
-        setTimeout(() => {
-          setShowMenu(false);
-          setFadeOut(false);
-        }, 500);
-      }
-    };
+  const handleClickOutside = (event) => {
+    if (
+      showMenu &&
+      wrapperRef.current &&
+      !wrapperRef.current.contains(event.target)
+    ) {
+      setFadeOut(true);
+      setTimeout(() => {
+        setShowMenu(false);
+        setFadeOut(false);
+      }, 500);
+    }
+  };
 
+  useEffect(() => {
     document.addEventListener("mousedown", handleClickOutside);
 
     return () => {
