@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 import styles from "./authButton.module.css";
 
-import Account from "../../assets/svg/Account/Account.jsx";
+import AccountSvg from "../../assets/svg/Account/AccountSvg.jsx";
 import MenuUser from "../MenuUser/MenuUser.jsx";
 
 const AuthButton = ({ isAuthorized, setIsAuthrized, setUser }) => {
@@ -12,7 +12,7 @@ const AuthButton = ({ isAuthorized, setIsAuthrized, setUser }) => {
   return (
     <>
       {isAuthorized ? (
-        <Account onClick={() => setShowMenu((prev) => !prev)} />
+        <AccountSvg onClick={() => setShowMenu((prev) => !prev)} />
       ) : (
         <Link to="/login" className={styles["btn-login"]}>
           Войти
