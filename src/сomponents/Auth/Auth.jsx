@@ -5,7 +5,7 @@ import styles from "./auth.module.css";
 
 import { registration, login } from "./Auth.js";
 
-const Auth = ({ users, setUsers, setIsAuthrized }) => {
+const Auth = ({ users, setUsers, setIsAuthrized, setUser }) => {
   const navigate = useNavigate();
 
   const [error, setError] = useState("");
@@ -27,6 +27,7 @@ const Auth = ({ users, setUsers, setIsAuthrized }) => {
       : login(users, formData);
 
     if (message.status === "success") {
+      setUser(message.user);
       navigate("/");
       setIsAuthrized(true);
     } else if (message.status === "error") {
@@ -75,7 +76,10 @@ const Auth = ({ users, setUsers, setIsAuthrized }) => {
           onChange={handleChangeFormData}
         />
       </div>
-      <button className={styles["btn-login"]} onClick={handleAuth}>
+      <button
+        className={`${styles["btn"]} ${styles["btn-login"]}`}
+        onClick={handleAuth}
+      >
         {isRegistration ? "Зарегистрироваться" : "Войти"}
       </button>
       <span

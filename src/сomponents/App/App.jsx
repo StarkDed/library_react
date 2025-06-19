@@ -12,6 +12,7 @@ const App = () => {
   const [listBooks, setListBooks] = useState([]);
   const [users, setUsers] = useState([]);
   const [isAuthorized, setIsAuthrized] = useState(true);
+  const [user, setUser] = useState(null);
 
   return (
     <BrowserRouter>
@@ -27,6 +28,7 @@ const App = () => {
                   users={users}
                   setUsers={setUsers}
                   setIsAuthrized={setIsAuthrized}
+                  setUser={setUser}
                 />
               }
             />

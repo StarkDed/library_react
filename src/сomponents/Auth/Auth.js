@@ -1,19 +1,19 @@
 function registration(users, setUsers, formData) {
   try {
+    let user;
     validationReg(users, formData);
     setUsers((prev) => {
-      return [
-        ...prev,
-        {
-          id: prev.length + 1,
-          login: formData.login,
-          password: formData.password,
-          role: "user",
-        },
-      ];
+      user = {
+        id: prev.length + 1,
+        login: formData.login,
+        password: formData.password,
+        role: "user",
+      };
+
+      return [...prev, user];
     });
 
-    return { status: "success" };
+    return { status: "success", user: user };
   } catch (e) {
     return { status: "error", error: e.message };
   }
