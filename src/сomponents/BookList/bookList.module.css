@@ -6,3 +6,27 @@
 .title {
   user-select: none;
 }
+
+.book-list-wrapper {
+  width: 100%;
+  /* padding:8px; */
+  padding: 25px;
+  flex: 1;
+}
+
+h2 {
+  margin-bottom: 15px;
+}
+
+.book-list {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 1200px) {
+  .book-list {
+    justify-content: center;
+  }
+}
