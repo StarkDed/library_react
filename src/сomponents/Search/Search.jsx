@@ -1,14 +1,15 @@
 import styles from "./search.module.css";
-import SortingSvg from "../../assets/svg/SortingSvg/SortingSvg.jsx";
 
-const Search = () => {
+import Sorting from "../Sorting/Sorting.jsx";
+
+const Search = ({ setSortingName }) => {
   return (
     <div className={styles["search-container"]}>
       <input placeholder="Поиск" type="search" />
       <button className={`${styles["btn"]} ${styles["btn-search"]}`}>
         Найти
       </button>
-      <SortingSvg className={styles["sorting-icon"]} />
+      <Sorting setSortingName={setSortingName} />
     </div>
   );
 };

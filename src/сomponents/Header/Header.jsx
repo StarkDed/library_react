@@ -5,7 +5,7 @@ import styles from "./header.module.css";
 import Search from "../Search/Search.jsx";
 import AuthButton from "../AuthButton/AuthButton.jsx";
 
-const Header = ({ isAuthorized, setIsAuthrized, setUser }) => {
+const Header = ({ isAuthorized, setIsAuthrized, setUser, setSortingName }) => {
   const navigate = useNavigate();
 
   return (
@@ -21,7 +21,7 @@ const Header = ({ isAuthorized, setIsAuthrized, setUser }) => {
         >
           Каталог
         </button>
-        <Search />
+        <Search setSortingName={setSortingName} />
         <AuthButton
           isAuthorized={isAuthorized}
           setIsAuthrized={setIsAuthrized}

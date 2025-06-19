@@ -1,6 +1,6 @@
 import styles from "./sortingSvg.module.css";
 
-const SortingSvg = () => {
+const SortingSvg = ({ onClick }) => {
   return (
     <svg
       className={styles["sorting-icon"]}
@@ -9,6 +9,7 @@ const SortingSvg = () => {
       viewBox="0 0 25 25"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
+      onClick={onClick}
     >
       <g clipPath="url(#clip0_12_19)">
         <path

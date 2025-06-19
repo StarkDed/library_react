@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import "./app.css";
@@ -7,6 +7,8 @@ import Header from "../Header/Header.jsx";
 import BookList from "../BookList/BookList.jsx";
 import Footer from "../Footer/Footer.jsx";
 import Auth from "../Auth/Auth.jsx";
+
+import { sortingBooks } from "./App.js";
 
 const App = () => {
   const [listBooks, setListBooks] = useState([
@@ -82,6 +84,14 @@ const App = () => {
   const [isAuthorized, setIsAuthrized] = useState(false);
   const [user, setUser] = useState(null);
 
+  const [sortingName, setSortingName] = useState("");
+
+  useEffect(() => {
+    if (sortingName) {
+      setListBooks(sortingBooks(listBooks, sortingName));
+    }
+  }, [sortingName]);
+
   return (
     <BrowserRouter>
       <div className="app" id="app">
@@ -89,6 +99,7 @@ const App = () => {
           isAuthorized={isAuthorized}
           setIsAuthrized={setIsAuthrized}
           setUser={setUser}
+          setSortingName={setSortingName}
         />
         <main>
           <Routes>
