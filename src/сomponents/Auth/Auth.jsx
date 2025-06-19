@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 
 import styles from "./auth.module.css";
 
-import { registration, login } from "./Auth.js";
+import { useAuth } from "./useAuth.js";
 
 const Auth = ({ users, setUsers, setIsAuthrized, setUser }) => {
   const navigate = useNavigate();
@@ -15,6 +15,7 @@ const Auth = ({ users, setUsers, setIsAuthrized, setUser }) => {
     password: "",
     repeaterPassword: "",
   });
+  const { registration, login } = useAuth();
 
   const handleChangeFormData = (e) => {
     const { id, value } = e.target;
