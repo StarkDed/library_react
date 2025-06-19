@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 import styles from "./authButton.module.css";
 
-import AccountSvg from "../../assets/svg/Account/AccountSvg.jsx";
+import AccountSvg from "../../assets/svg/AccountSvg/AccountSvg.jsx";
 import MenuUser from "../MenuUser/MenuUser.jsx";
 
 const AuthButton = ({ isAuthorized, setIsAuthrized, setUser }) => {

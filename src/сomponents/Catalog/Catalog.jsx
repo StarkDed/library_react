@@ -2,6 +2,8 @@ import React from "react";
 
 import styles from "./catalog.module.css";
 
+import Cross from "../../assets/svg/CrossSvg/CrossSvg.jsx";
+
 const catalogList = [
   { id: 1, name: "Детективы" },
   { id: 2, name: "Исторический детективы" },
@@ -16,8 +18,6 @@ const catalogList = [
   { id: 11, name: "Приключения" },
   { id: 12, name: "Драма" },
 ];
-
-import Cross from "../../assets/svg/Cross1/Cross.jsx";
 
 const Catalog = ({ setShowCatalog, setHeadline }) => {
   return (

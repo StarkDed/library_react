@@ -1,6 +1,6 @@
 import styles from "./book.module.css";
 
-import HeartSvg from "../../assets/svg/Heart/HeartSvg.jsx";
+import HeartSvg from "../../assets/svg/HeartSvg/HeartSvg.jsx";
 
 const Book = ({ book }) => {
   return (
