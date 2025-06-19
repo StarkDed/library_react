@@ -11,13 +11,17 @@ import Auth from "../Auth/Auth.jsx";
 const App = () => {
   const [listBooks, setListBooks] = useState([]);
   const [users, setUsers] = useState([]);
-  const [isAuthorized, setIsAuthrized] = useState(true);
+  const [isAuthorized, setIsAuthrized] = useState(false);
   const [user, setUser] = useState(null);
 
   return (
     <BrowserRouter>
       <div className="app" id="app">
-        <Header isAuthorized={isAuthorized} />
+        <Header
+          isAuthorized={isAuthorized}
+          setIsAuthrized={setIsAuthrized}
+          setUser={setUser}
+        />
         <main>
           <Routes>
             <Route path="/" element={<BookList listBooks={listBooks} />} />

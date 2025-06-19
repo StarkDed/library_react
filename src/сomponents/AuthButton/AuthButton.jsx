@@ -7,7 +7,7 @@ import styles from "./authButton.module.css";
 import Account from "../../assets/svg/Account/Account.jsx";
 import MenuUser from "../MenuUser/MenuUser.jsx";
 
-const AuthButton = ({ isAuthorized }) => {
+const AuthButton = ({ isAuthorized, setIsAuthrized, setUser }) => {
   const [showMenu, setShowMenu] = useState(false);
   return (
     <>
@@ -20,7 +20,12 @@ const AuthButton = ({ isAuthorized }) => {
       )}
       {showMenu &&
         ReactDom.createPortal(
-          <MenuUser showMenu={showMenu} setShowMenu={setShowMenu} />,
+          <MenuUser
+            showMenu={showMenu}
+            setShowMenu={setShowMenu}
+            setIsAuthrized={setIsAuthrized}
+            setUser={setUser}
+          />,
           document.getElementById("app")
         )}
     </>

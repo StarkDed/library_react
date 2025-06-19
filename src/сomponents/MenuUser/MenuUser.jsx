@@ -4,7 +4,7 @@ import styles from "./menuUser.module.css";
 
 import BookSvg from "../../assets/svg/BookSvg/BookSvg.jsx";
 
-const MenuUser = ({ showMenu, setShowMenu }) => {
+const MenuUser = ({ showMenu, setShowMenu, setIsAuthrized, setUser }) => {
   const wrapperRef = useRef(null);
   const [fadeOut, setFadeOut] = useState(false);
 
@@ -49,7 +49,14 @@ const MenuUser = ({ showMenu, setShowMenu }) => {
           </button>
         </div>
       </div>
-      <button className={`${styles["btn"]} ${styles["btn-exit"]}`}>
+      <button
+        onClick={() => {
+          setIsAuthrized(false);
+          setShowMenu(false);
+          setUser(null);
+        }}
+        className={`${styles["btn"]} ${styles["btn-exit"]}`}
+      >
         Выход
       </button>
     </div>
