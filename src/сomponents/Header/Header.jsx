@@ -46,6 +46,7 @@ const Header = ({
             isAuthorized={isAuthorized}
             setIsAuthrized={setIsAuthrized}
             setUser={setUser}
+            setHeadline={setHeadline}
           />
         </div>
       </header>

@@ -7,7 +7,7 @@ import styles from "./authButton.module.css";
 import AccountSvg from "../../assets/svg/AccountSvg/AccountSvg.jsx";
 import MenuUser from "../MenuUser/MenuUser.jsx";
 
-const AuthButton = ({ isAuthorized, setIsAuthrized, setUser }) => {
+const AuthButton = ({ isAuthorized, setIsAuthrized, setUser, setHeadline }) => {
   const [showMenu, setShowMenu] = useState(false);
   return (
     <>
@@ -25,6 +25,7 @@ const AuthButton = ({ isAuthorized, setIsAuthrized, setUser }) => {
             setShowMenu={setShowMenu}
             setIsAuthrized={setIsAuthrized}
             setUser={setUser}
+            setHeadline={setHeadline}
           />,
           document.getElementById("app")
         )}

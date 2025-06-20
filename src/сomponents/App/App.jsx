@@ -97,7 +97,10 @@ const App = () => {
 
   useEffect(() => {
     setListBooks(originalListBooks);
-    if (headline !== "Лучшие книги") {
+    if (headline === "Избранное") {
+      const favorites = JSON.parse(localStorage.getItem("favorites")) || [];
+      setListBooks((prev) => prev.filter((el) => favorites.includes(el.id)));
+    } else if (headline !== "Лучшие книги") {
       setListBooks((prev) => prev.filter((el) => el.genres.includes(headline)));
     }
   }, [headline]);
