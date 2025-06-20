@@ -83,7 +83,7 @@ const originalListBooks = [
 const App = () => {
   const [listBooks, setListBooks] = useState([]);
   const [users, setUsers] = useState([]);
-  const [isAuthorized, setIsAuthrized] = useState(false);
+  const [isAuthorized, setIsAuthrized] = useState(true);
   const [user, setUser] = useState(null);
 
   const [sortingName, setSortingName] = useState("");

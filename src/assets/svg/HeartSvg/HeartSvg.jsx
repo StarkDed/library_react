@@ -1,10 +1,17 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 import styles from "./heart.module.css";
 
-const Heart = () => {
+const Heart = ({ id }) => {
   const [isHovering, setIsHovering] = useState(false);
   const [isClicked, setIsClicked] = useState(false);
+
+  useEffect(() => {
+    const favorites = JSON.parse(localStorage.getItem("favorites")) || [];
+    if (favorites.includes(id)) {
+      setIsClicked(true);
+    }
+  }, []);
 
   return (
     <svg
@@ -16,7 +23,18 @@ const Heart = () => {
       xmlns="http://www.w3.org/2000/svg"
       onMouseEnter={() => setIsHovering(true)}
       onMouseLeave={() => setIsHovering(false)}
-      onClick={() => setIsClicked((prev) => !prev)}
+      onClick={() => {
+        const favorites = JSON.parse(localStorage.getItem("favorites")) || [];
+        if (!isClicked) {
+          localStorage.setItem("favorites", JSON.stringify([...favorites, id]));
+        } else {
+          localStorage.setItem(
+            "favorites",
+            JSON.stringify(favorites.filter((el) => el !== id))
+          );
+        }
+        setIsClicked((prev) => !prev);
+      }}
     >
       <path
         d="M7.7627 2C4.6447 2 2.3857 4.04 1.4677 6.549C0.551704 9.052 0.920704 12.138 3.1137 14.368L11.5927 22.982C11.7781 23.1706 11.9991 23.3205 12.2429 23.423C12.4867 23.5254 12.7484 23.5783 13.0129 23.5787C13.2773 23.5791 13.5392 23.5269 13.7833 23.4251C14.0274 23.3234 14.2488 23.1741 14.4347 22.986C16.4047 20.998 21.9037 15.44 22.9287 14.353C25.0817 12.071 25.4447 8.995 24.5287 6.503C23.6077 4.006 21.3597 2 18.2677 2C16.7847 2 15.4207 2.798 14.4447 3.549C13.8757 3.986 13.3857 4.449 13.0127 4.833C12.5671 4.37165 12.0892 3.94256 11.5827 3.549C10.6077 2.798 9.2437 2 7.7627 2Z"

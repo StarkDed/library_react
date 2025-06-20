@@ -7,7 +7,7 @@ const Book = ({ book }) => {
     <div className={styles["book-container"]}>
       <div className={styles["image-container"]}>
         <img src={book.cover} alt="" />
-        <HeartSvg />
+        <HeartSvg id={book.id} />
       </div>
       <span className={styles.bookName}>{book.name}</span>
       <br />
