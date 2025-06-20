@@ -41,7 +41,7 @@ const Header = ({
           >
             Каталог
           </button>
-          <Search setSortingName={setSortingName} />
+          <Search setSortingName={setSortingName} setHeadline={setHeadline} />
           <AuthButton
             isAuthorized={isAuthorized}
             setIsAuthrized={setIsAuthrized}

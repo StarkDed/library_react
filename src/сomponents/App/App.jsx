@@ -97,7 +97,17 @@ const App = () => {
 
   useEffect(() => {
     setListBooks(originalListBooks);
-    if (headline === "Избранное") {
+    if (headline.includes("Результат поиска: ")) {
+      const searchText = headline.substring(19).slice(0, -1);
+      setListBooks((prev) =>
+        prev.filter(
+          (el) =>
+            el.name.toLowerCase().includes(searchText) ||
+            el.author.toLowerCase().includes(searchText) ||
+            el.genres.some((genre) => genre.toLowerCase().includes(searchText))
+        )
+      );
+    } else if (headline === "Избранное") {
       const favorites = JSON.parse(localStorage.getItem("favorites")) || [];
       setListBooks((prev) => prev.filter((el) => favorites.includes(el.id)));
     } else if (headline !== "Лучшие книги") {
